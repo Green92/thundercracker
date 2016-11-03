@@ -37,7 +37,7 @@ CFLAGS += -g
 # release binary by omitting "-g" in our slinky invocation.
 
 ifeq ($(RELEASE),)
-    LDFLAGS += -g
+    LDFLAGS += -g -v
     LINK_MESSAGE += (Debug)
 else
     LINK_MESSAGE += (Release)
