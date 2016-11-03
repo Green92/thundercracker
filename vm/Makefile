@@ -44,7 +44,8 @@ LIBS += \
 	$(LLVM_LIB)/libLLVMMCParser.a \
 	$(LLVM_LIB)/libLLVMMC.a \
 	$(LLVM_LIB)/libLLVMCore.a \
-	$(LLVM_LIB)/libLLVMSupport.a
+	$(LLVM_LIB)/libLLVMSupport.a \
+	-lm 
 
 # Platform LLVM deps
 ifeq ($(BUILD_PLATFORM), windows32)
