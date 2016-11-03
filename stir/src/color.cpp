@@ -343,7 +343,7 @@ void ColorReducer::splitBox(box &b, int at)
      * at+1. Both new boxes are added to the box queue.
      */
 
-    box newBox = { at+1, b.end };
+    box newBox = { static_cast<unsigned int>(at+1), b.end };
     b.end = newBox.begin;
 
     boxQueue.push_back(&b - &boxes[0]);

@@ -194,7 +194,7 @@ void DUBEncoder::encodeBlock(uint16_t *pTopLeft,
                     continue;
                 } else {
                     // Break an existing run
-                    Code rep = { Code::REPEAT, repeatCount };
+                    Code rep = { Code::REPEAT, static_cast<int>(repeatCount) };
                     debugCode(x, y, rep, tile);
                     packCode(rep, bits);
                     bits.flush(data);
@@ -213,7 +213,7 @@ void DUBEncoder::encodeBlock(uint16_t *pTopLeft,
 
     if (repeating) {
         // Flush any final REPEAT code we have stowed away.
-        Code rep = { Code::REPEAT, repeatCount };
+        Code rep = { Code::REPEAT, static_cast<int>(repeatCount) };
         debugCode(-1, -1, rep, -1);
         packCode(rep, bits);
     }
@@ -258,7 +258,7 @@ DUBEncoder::Code DUBEncoder::findBestCode(const std::vector<uint16_t> &dict, uin
 
     for (unsigned i = 0; i < dict.size(); i++)
         if (tile == dict[dict.size() - 1 - i]) {
-            Code candidate = { Code::REF, i };
+            Code candidate = { Code::REF, static_cast<int>(i) };
             unsigned len = codeLen(candidate);
             if (len <= bestLength) {
                 code = candidate;

@@ -246,22 +246,22 @@ unsigned ADPCMEncoder::encodeSample(State &state, int sample)
     };
 
     static const int codeTable[16] = {
-        0xFFFFFF01,
-        0xFFFFFF03,
-        0xFFFFFF05,
-        0xFFFFFF07,
-        0x00000209,
-        0x0000040B,
-        0x0000060D,
-        0x0000080F,
-        0xFFFFFFFF,
-        0xFFFFFFFD,
-        0xFFFFFFFB,
-        0xFFFFFFF9,
-        0x000002F7,
-        0x000004F5,
-        0x000006F3,
-        0x000008F1,
+        static_cast<const int>(0xFFFFFF01),
+        static_cast<const int>(0xFFFFFF03),
+        static_cast<const int>(0xFFFFFF05),
+        static_cast<const int>(0xFFFFFF07),
+        static_cast<const int>(0x00000209),
+        static_cast<const int>(0x0000040B),
+        static_cast<const int>(0x0000060D),
+        static_cast<const int>(0x0000080F),
+        static_cast<const int>(0xFFFFFFFF),
+        static_cast<const int>(0xFFFFFFFD),
+        static_cast<const int>(0xFFFFFFFB),
+        static_cast<const int>(0xFFFFFFF9),
+        static_cast<const int>(0x000002F7),
+        static_cast<const int>(0x000004F5),
+        static_cast<const int>(0x000006F3),
+        static_cast<const int>(0x000008F1)
     };
 
     int index = state.index;
